@@ -9,7 +9,7 @@ import java.util.Set;
 public class Main {
 
     private static boolean isValid(String str) {
-        Map<Character, Integer> charFrequency = new HashMap<Character, Integer>();
+        Map<Character, Integer> charFrequency = new HashMap<>();
         for (char ch : str.toCharArray()) {
             if (charFrequency.containsKey(ch))
                 charFrequency.put(ch, charFrequency.get(ch) + 1);
@@ -17,7 +17,7 @@ public class Main {
                 charFrequency.put(ch, 1);
         }
         
-        Set<Integer> uniqueFreqs = new HashSet<Integer>(charFrequency.values());
+        Set<Integer> uniqueFreqs = new HashSet<>(charFrequency.values());
         
         return uniqueFreqs.size() == 1;
     }
