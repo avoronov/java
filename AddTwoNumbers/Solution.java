@@ -1,51 +1,50 @@
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode result = null;
-        ListNode curr = null; 
+        ListNode result = l1;
+        ListNode curr = null;
         boolean overflow = false;
     
-        while (l1 != null || l2 != null) {
-            int val = 0;
+        while (l1 != null && l2 != null) {
+            curr = l1;
 
             if (overflow) {
-                val++;
+                curr.val++;
                 overflow = false;
             }
 
-            if (l1 != null) {
-                val += l1.val;
-                l1 = l1.next;
-            }
+            curr.val += l2.val;
 
-            if (l2 != null) {
-                val += l2.val;
-                l2 = l2.next;
-            }
-
-            if (val >= 10) {
-                val -= 10;
+            if (curr.val >= 10) {
+                curr.val -= 10;
                 overflow = true;
             }
 
-            ListNode tmp = new ListNode(val);
+            l1 = l1.next;
+            l2 = l2.next;
+        }
 
-            if (curr != null) {
-                curr.next = tmp;
-            }
+        ListNode tail = l1 != null ? l1 : l2;
+        if (tail != null) {
+            curr.next = tail;
+            
+            while (tail != null) {
+                if (overflow) {
+                    tail.val++;
+                    overflow = false;
+                }
 
-            curr = tmp;
+                if (tail.val >= 10) {
+                    tail.val -= 10;
+                    overflow = true;
+                }
 
-            if (result == null) {
-                result = curr;
+                curr = tail;
+                tail = tail.next;
             }
         }
 
-        if (overflow) {
-            ListNode tmp = new ListNode(1);
-            curr.next = tmp;
-            // curr = tmp;
-            // overflow = false;
-        }
+        if (overflow)
+            curr.next = new ListNode(1);
         
         return result;
     }

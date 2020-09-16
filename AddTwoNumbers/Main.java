@@ -3,9 +3,17 @@ public class Main {
         // ListNode l1 = buildList(new int[]{2,4,3});
         // ListNode l2 = buildList(new int[]{5,6,4});
 
-        ListNode l1 = buildList(new int[]{5});
-        ListNode l2 = buildList(new int[]{5});
+        // ListNode l1 = buildList(new int[]{5});
+        // ListNode l2 = buildList(new int[]{5});
 
+        // ListNode l1 = buildList(new int[]{0});
+        // ListNode l2 = buildList(new int[]{7,3});
+
+        // ListNode l1 = buildList(new int[]{9, 8});
+        // ListNode l2 = buildList(new int[]{1});
+
+        ListNode l1 = buildList(new int[]{1});
+        ListNode l2 = buildList(new int[]{9,9});
 
         // printList(l1);
         // printList(l2);
