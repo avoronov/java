@@ -10,7 +10,7 @@ import java.util.TreeMap;
 public class Main {
 
     private static boolean isValid(String str) {
-        Map<Character, Integer> charFrequency = new HashMap<Character, Integer>();
+        Map<Character, Integer> charFrequency = new HashMap<>();
         for (char ch : str.toCharArray()) {
             if (charFrequency.containsKey(ch))
                 charFrequency.put(ch, charFrequency.get(ch) + 1);
@@ -18,7 +18,7 @@ public class Main {
                 charFrequency.put(ch, 1);
         }
         
-        SortedMap<Integer, Integer> frequencyFreq = new TreeMap<Integer, Integer>();
+        SortedMap<Integer, Integer> frequencyFreq = new TreeMap<>();
         for (Integer freq : charFrequency.values()) {
             if (frequencyFreq.containsKey(freq))
                 frequencyFreq.put(freq, frequencyFreq.get(freq) + 1);
