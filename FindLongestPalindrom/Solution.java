@@ -30,11 +30,15 @@ class Solution {
 
         String maxPalindrom = "";
         for (int i = 0; i < len; i++) {
+
+            if ((len - i) < maxPalindrom.length())
+                break;
+
             for (int j = len; j > i; j--) {
-                String tmp = s.substring(i, j);
+                if ((j - i) <= maxPalindrom.length())
+                    break;
                 
-                if (tmp.length() < maxPalindrom.length())
-                    continue;
+                String tmp = s.substring(i, j);
 
                 if (isPalindrom(tmp))
                     maxPalindrom = tmp; 

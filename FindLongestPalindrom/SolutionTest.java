@@ -17,6 +17,7 @@ public class SolutionTest {
     public void test_longestPalindrome() {
         Solution s = new Solution();
         Assert.assertEquals(s.longestPalindrome("bb"), "bb");
+        Assert.assertEquals(s.longestPalindrome("babad"), "bab");
     }
 
 }
